@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #ede0c4;
+  --text: #0d0600;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  background-color: #e8d9bc;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(122, 96, 48, 0.03) 0px,
+      rgba(122, 96, 48, 0.03) 1px,
+      transparent 1px,
+      transparent 18px
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+  color: var(--text);
+}
+
+body {
+  font-family: 'Noto Serif SC', serif;
+}
+
+/* ── 卷轴卡片 ── */
+.scroll-card {
+  background: #ede0c4;
+  border: 1.5px solid #9a7d3a;
+  box-shadow:
+    inset 0 0 18px rgba(154, 125, 58, 0.10),
+    0 3px 18px rgba(13, 6, 0, 0.09);
+  position: relative;
+}
+.scroll-card::before,
+.scroll-card::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #9a7d3a 20%, #9a7d3a 80%, transparent);
+  opacity: 0.35;
+}
+.scroll-card::before { top: 5px; }
+.scroll-card::after  { bottom: 5px; }
+
+/* ── 故宫红印章按钮 ── */
+.seal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.5rem 1.75rem;
+  background: #9b2335;
+  color: #f5ead6;
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  border: 1.5px solid #6e1826;
+  box-shadow: 2px 2px 0 #6e1826, inset 0 1px 0 rgba(255,255,255,0.08);
+  transition: background 0.15s, box-shadow 0.15s;
+}
+.seal-btn:hover {
+  background: #6e1826;
+  box-shadow: 1px 1px 0 #4a0f18;
+}
+.seal-btn:focus-visible {
+  outline: 2px solid #9b2335;
+  outline-offset: 2px;
+}
+
+/* ── 墨色描边按钮 ── */
+.ghost-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.5rem 1.75rem;
+  background: transparent;
+  color: #3d2b1f;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  border: 1.5px solid #7a6030;
+  transition: background 0.15s;
+}
+.ghost-btn:hover {
+  background: rgba(122, 96, 48, 0.10);
+}
+.ghost-btn:focus-visible {
+  outline: 2px solid #7a6030;
+  outline-offset: 2px;
+}
+
+/* ── 国风输入框 ── */
+.scroll-input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  background: #f5ead6;
+  border: 1px solid #9a7d3a;
+  color: #0d0600;
+  font-family: 'Noto Serif SC', serif;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  appearance: none;
+}
+.scroll-input:focus {
+  border-color: #9b2335;
+  box-shadow: 0 0 0 2px rgba(155, 35, 53, 0.12);
+}
+
+/* ── 国风 select（菱形箭头） ── */
+.scroll-select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+  background: #f5ead6;
+  border: 1px solid #9a7d3a;
+  color: #0d0600;
+  font-family: 'Noto Serif SC', serif;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 1 L11 6 L6 11 L1 6 Z' fill='none' stroke='%239a7d3a' stroke-width='1.2'/%3E%3Cpath d='M6 4 L9 6 L6 8 L3 6 Z' fill='%239a7d3a'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.scroll-select:focus {
+  border-color: #9b2335;
+  box-shadow: 0 0 0 2px rgba(155, 35, 53, 0.12);
+}
+
+/* ── 国风 checkbox 标签（整体选中态） ── */
+.check-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0 0.75rem;
+  border: 1.5px solid #9a7d3a;
+  background: #f5ead6;
+  color: #3d2b1f;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  user-select: none;
+}
+.check-tag:hover {
+  background: #e8d5a8;
+}
+.check-tag.checked {
+  background: #9b2335;
+  border-color: #6e1826;
+  color: #f5ead6;
+}
+/* 隐藏原生 checkbox */
+.check-tag input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* 自定义印章方块 */
+.check-tag::before {
+  content: '';
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  transition: background 0.15s;
+}
+.check-tag.checked::before {
+  content: '✕';
+  background: #f5ead6;
+  color: #9b2335;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  line-height: 1;
+}
+
+/* ── 国风 range slider ── */
+.scroll-range {
+  width: 100%;
+  height: 4px;
+  appearance: none;
+  background: linear-gradient(90deg, #9b2335 var(--pct, 50%), #cdb98a var(--pct, 50%));
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+.scroll-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #f5ead6;
+  border: 2px solid #9b2335;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(155,35,53,0.3);
+  cursor: pointer;
+}
+.scroll-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #f5ead6;
+  border: 2px solid #9b2335;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* ── 步骤指示器（备用） ── */
+.step-indicator {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.step-indicator-item {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #9a7d3a;
+  color: #9a7d3a;
+  font-size: 0.75rem;
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+.step-indicator-item.active {
+  background: #9b2335;
+  border-color: #9b2335;
+  color: #f5ead6;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #9b2335;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
