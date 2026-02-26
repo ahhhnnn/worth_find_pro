@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "opennextjs-cloudflare build",
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
+    "deploy": "opennextjs-cloudflare deploy"
   },
   "dependencies": {
     "echarts": "^5.6.0",
