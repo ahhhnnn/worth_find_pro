@@ -1,3 +1,1 @@
-export default {
-  appPath: ".",
-};
+export default {};
