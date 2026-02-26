@@ -5,6 +5,10 @@ node_modules/
 .next/
 out/
 
+# OpenNext build output
+.open-next/
+.wrangler/
+
 # Environment variables
 .env
 .env.local
