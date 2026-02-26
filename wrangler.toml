@@ -1,6 +1,7 @@
 name = "worthfindpro"
 compatibility_date = "2025-09-27"
 compatibility_flags = ["nodejs_compat"]
+main = ".open-next/worker.js"
 
 [observability]
 enabled = true
