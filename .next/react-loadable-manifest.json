@@ -1,8 +1,0 @@
-{
-  "components/ResultRadarChart.tsx -> echarts-for-react": {
-    "id": "components/ResultRadarChart.tsx -> echarts-for-react",
-    "files": [
-      "static/chunks/_app-pages-browser_node_modules_pnpm_echarts-for-react_3_0_6_echarts_5_6_0_react_19_2_4_node_-bab190.js"
-    ]
-  }
-}
